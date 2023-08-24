@@ -7,12 +7,12 @@ const { validSchema } = require("../../helpers");
 
 router.get("/", ctrl.getAll);
 
-router.get("/:contactId", ctrl.getById);
+router.get("/:id", ctrl.getById);
 
 router.post("/", validateBody(validSchema), ctrl.add);
 
-router.put("/:contactId", validateBody(validSchema), ctrl.change);
+router.put("/:id", validateBody(validSchema), ctrl.change);
 
-router.delete("/:contactId", ctrl.del);
+router.delete("/:id", ctrl.del);
 
 module.exports = router;
