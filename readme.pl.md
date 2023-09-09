@@ -7,7 +7,7 @@ Dodaj mentora jako collaboratora.
 Dla każdego zadania domowego utwórz nową gałąź (branch).
 
 - hw02
-- hw03
+- hw03 Af2XI1rEgjzHGx58 yurickV
 - hw04
 - hw05
 - hw06
@@ -23,7 +23,7 @@ Uważnie czytaj komentarze mentora. Popraw uwagi i zrób commit na gałęzi z za
 
 ### Komendy:
 
-- `npm start` &mdash;  uruchamia serwer w trybie produkcyjnym
+- `npm start` &mdash; uruchamia serwer w trybie produkcyjnym
 - `npm run start:dev` &mdash; uruchamia serwer w trybie deweloperskim (development)
 - `npm run lint` &mdash; uruchamia sprawdzanie kodu z ESLint, należy wykonać przed każdym PR i poprawić wszystkie błędy lintera
 - `npm lint:fix` &mdash; to samo co powyższe, ale również automatycznie poprawia proste błędy.
