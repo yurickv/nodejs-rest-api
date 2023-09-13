@@ -2,25 +2,32 @@ const express = require("express");
 const router = express.Router();
 const ctrl = require("../../controlers/controllers");
 
-const { validateBody, isValidId } = require("../../middlewares");
+const { validateBody, isValidId, authenticate } = require("../../middlewares");
 const { validSchema } = require("../../helpers");
 const { updateFaviriteSchema } = require("../../models/contact");
 
-router.get("/", ctrl.getAll);
+router.get("/", authenticate, ctrl.getAll);
 
-router.get("/:id", isValidId, ctrl.getById);
+router.get("/:id", authenticate, isValidId, ctrl.getById);
 
-router.post("/", validateBody(validSchema), ctrl.add);
+router.post("/", authenticate, validateBody(validSchema), ctrl.add);
 
-router.put("/:id", isValidId, validateBody(validSchema), ctrl.change);
+router.put(
+  "/:id",
+  authenticate,
+  isValidId,
+  validateBody(validSchema),
+  ctrl.change
+);
 
 router.patch(
   "/:id/favorite",
+  authenticate,
   isValidId,
   validateBody(updateFaviriteSchema),
   ctrl.updateFavorite
 ); //оновлюємо 1 поле
 
-router.delete("/:id", isValidId, ctrl.del);
+router.delete("/:id", authenticate, isValidId, ctrl.del);
 
 module.exports = router;
