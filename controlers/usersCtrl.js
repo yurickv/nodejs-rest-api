@@ -77,9 +77,9 @@ const resendVerifyEmail = async (req, res) => {
     subject: "Verify email",
     html: `<a target="_blank" href="${BASE_URL}/api/auth/verify/${user.verificationToken}">Click verify email</a>`,
   };
-
+  console.log("Before sending");
   await sendEmail(verifyEmail);
-
+  console.log("After sending");
   res.json({
     message: "Verification email sent",
   });
@@ -129,6 +129,7 @@ const updateAvatar = async (req, res) => {
   const { _id } = req.user;
   const { path: tempUpload, originalname } = req.file;
   const filename = `${_id}_${originalname}`;
+
   const resultUpload = path.join(avatarDir, filename);
 
   const avatarImage = await Jimp.read(tempUpload);
