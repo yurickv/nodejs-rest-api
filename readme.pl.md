@@ -10,7 +10,7 @@ Dla każdego zadania domowego utwórz nową gałąź (branch).
 - hw03 Af2XI1rEgjzHGx58 yurickV
 - hw04
 - hw05
-- hw06
+- hw06 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
 
 Każda nowa gałąź dla zadania powinna być tworzona z gałęzi master.
 
